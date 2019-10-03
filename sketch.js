@@ -4,15 +4,21 @@ function setup() {
 
 function draw() {
 colorMode(HSB);
-  background(255, 204, 100)
+  background(230, 150, 80)
   strokeWeight(7)
-  line(mouseX, mouseY, pmouseX, pmouseY);
+
+
 
 if (mouseIsPressed){
-stroke(map(mousex, 0, 600, 0, 300, true))
 
-
+line(mouseX, mouseY, pmouseX, pmouseY);
+stroke(map(mouseX, 400, 600, 200, 255, true));
 };
 
-
+}
+function keyTyped(){
+  if (key === 's'){
+  saveCanvas('fileName', 'png')
+}
+return false
 }
