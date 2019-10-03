@@ -3,11 +3,13 @@ function setup() {
 }
 
 function draw() {
-  background(color(0, 0, 200));
+colorMode(HSB);
+  background(255, 204, 100)
+  strokeWeight(7)
   line(mouseX, mouseY, pmouseX, pmouseY);
 
 if (mouseIsPressed){
-
+stroke(map(mousex, 0, 600, 0, 255, true))
 
 
 };
