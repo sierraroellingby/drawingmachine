@@ -3,14 +3,14 @@ function setup() {
 }
 
 function draw() {
-  background(220);
-  line(mouseX, mouseY, pmouseX, pmouseY)
+  background(color(0, 0, 200));
+  line(mouseX, mouseY, pmouseX, pmouseY);
 
 if (mouseIsPressed){
 
-  
 
-}
+
+};
 
 
 }
