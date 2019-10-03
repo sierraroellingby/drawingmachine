@@ -4,8 +4,13 @@ function setup() {
 
 function draw() {
   background(220);
+  line(mouseX, mouseY, pmouseX, pmouseY)
 
-console.log(mouseIsPressed)
+if (mouseIsPressed){
 
   
+
+}
+
+
 }
