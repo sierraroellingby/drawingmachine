@@ -9,7 +9,7 @@ colorMode(HSB);
   line(mouseX, mouseY, pmouseX, pmouseY);
 
 if (mouseIsPressed){
-stroke(map(mousex, 0, 600, 0, 255, true))
+stroke(map(mousex, 0, 600, 0, 300, true))
 
 
 };
