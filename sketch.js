@@ -1,11 +1,16 @@
-const particles = [];
 
+let img;
+function preload(){
+ img LoadImage('umbrella-clipart-transparent-18.jpg');
+  const particles = [];
+}
 function setup() {
   createCanvas(600, 400);
 }
 
 function draw() {
-  background(0);
+  background(10);
+
   for (let i = 0; i < 5; i++) {
     // change last two parameters to change speed
     let p = new Particle(mouseX, mouseY, map(mouseX - pmouseX, 0, 10, -.5, .5), map(mouseY - pmouseY, 0, 10, -.5, .5));
@@ -20,6 +25,8 @@ function draw() {
     }
   }
   //insert umbrella images
+  image(img, 10, 10);
+
 } //drawloop end
 
 class Particle {
