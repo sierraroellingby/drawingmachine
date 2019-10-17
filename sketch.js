@@ -1,6 +1,5 @@
 
-let noiseOffset = 0.01
-let strokeValue = 5
+
 
 function setup() {
   createCanvas(400, 400);
@@ -9,10 +8,7 @@ function setup() {
 }
 
 function draw() {
-strokeWeight(strokeValue);
 
-noiseOffset += 0.1;
-strokeValue = noise(noiseOffset) * 50;
 
 
 if (mouseIsPressed){
