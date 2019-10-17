@@ -1,11 +1,13 @@
 
-let img;
-function preload(){
- img LoadImage('umbrella-clipart-transparent-18.jpg');
-  const particles = [];
+ let img;
+ function preload(){
+img loadImage("Desktop/umbrella/umbrella-clipart-transparent-18");
 }
+  const particles = [];
+
 function setup() {
   createCanvas(600, 400);
+  image(img, width * 0.3, height * 0.3)
 }
 
 function draw() {
@@ -25,7 +27,6 @@ function draw() {
     }
   }
   //insert umbrella images
-  image(img, 10, 10);
 
 } //drawloop end
 
