@@ -1,48 +1,55 @@
-
-
+const particles = [];
 
 function setup() {
-  createCanvas(400, 400);
-    background(220)
-
+  createCanvas(600, 400);
 }
 
 function draw() {
+  background(0);
+  for (let i = 0; i < 5; i++) {
+    // change last two parameters to change speed
+    let p = new Particle(mouseX, mouseY, map(mouseX - pmouseX, 0, 10, -.5, .5), map(mouseY - pmouseY, 0, 10, -.5, .5));
+    particles.push(p);
+  }
+  for (let i = particles.length - 1; i >= 0; i--) {
+    particles[i].update();
+    particles[i].show();
+    if (particles[i].finished()) {
+      // remove this particle
+      particles.splice(i, 1);
+    }
+  }
+  //insert umbrella images
+} //drawloop end
 
+class Particle {
 
+  constructor(_x, _y, _vx, _vy) {
+    this.x = _x;
+    this.y = _y;
+    this.vx = _vx + random(-3, 2);
+    this.vy = _vy + random(-3, 2);
+    this.alpha = 155;
+  }
 
-if (mouseIsPressed){
+  finished() {
+    return this.alpha < 0;
+  }
 
-stroke(220,255,0)
-stroke(map(mouseX, 400, 100, true));
-line(mouseX, mouseY, pmouseX, pmouseY);
-};
+  update() {
+    // add perlin noise here
+    this.x += this.vx;
+    this.y += this.vy;
+    this.alpha -= 3;
+  }
 
-stroke(80);
-strokeWeight(7)
-push();
-fill(255, 255, 0);
-rotate(30);
-rect(width * 0.5, height * 0.5, 20, 120);
-pop();
-
-beginShape();
-  fill(255, 255, 0);
-curveVertex(width * 0.2, height * 0.3);
-curveVertex(width * 0.65, height * 0.23);
-curveVertex(width * 0.8, height * 0.7);
-curveVertex(width*0.65, height* 0.6);
-curveVertex(width * 0.5, height * 0.5);
-curveVertex(width * 0.3, height * 0.4);
-curveVertex(width * 0.8, height * 0.7);
-endShape();
-
-
-}
-function keyTyped(){
-  if (key === 's'){
-  saveCanvas('fileName', 'png')
-}
-return false
+  show() {
+    noStroke();
+    //stroke(255);
+    fill(60, 170, this.alpha);
+    ellipse(this.x, this.y, 36);
+    fill(152, 251, this.alpha);
+    ellipse(this.x-30, this.y - 15, 15);
+  }
 
 }
