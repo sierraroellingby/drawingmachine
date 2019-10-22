@@ -1,18 +1,24 @@
-let img;
+// let img;
+//
+// function preload() {
+//   img = loadImage('umbrella-clipart-transparent-18_78.jpg');
+// }
+let hongkong;
 
-function preload() {
-  img = loadImage('umbrella-clipart-transparent-18_78.jpg');
+function preload(){
+
+  hongkong = loadImage('hongkongcrop4.png')
 }
 const particles = [];
 
 function setup() {
   createCanvas(1500, 800);
-  image(img, width * 0.3, height * 0.3);
+
 }
 
 function draw() {
-  background(img);
-
+  background(10);
+  image(hongkong, 50, 50)
   for (let i = 0; i < 5; i++) {
     // change last two parameters to change speed
     let p = new Particle(mouseX, mouseY, map(mouseX - pmouseX, 0, 10, -.5, .5), map(mouseY - pmouseY, 0, 10, .5, 1));
