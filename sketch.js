@@ -6,7 +6,7 @@ function preload() {
 const particles = [];
 
 function setup() {
-  createCanvas(1000, 800);
+  createCanvas(1500, 800);
   image(img, width * 0.3, height * 0.3);
 }
 
