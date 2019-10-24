@@ -20,7 +20,7 @@ function preload(){
 const particles = [];
 
 function setup() {
-  createCanvas(1400, 800);
+  createCanvas(windowWidth, windowHeight);
 // shake = new Shakey();
 }
 
