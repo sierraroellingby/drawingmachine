@@ -4,7 +4,7 @@
 //   img = loadImage('umbrella-clipart-transparent-18_78.jpg');
 // }
 let hongkong;
-let shake;
+// let shake;
 
 function preload(){
 
@@ -20,20 +20,21 @@ function preload(){
 const particles = [];
 
 function setup() {
-  createCanvas(1500, 800);
-shake = new Shakey();
+  createCanvas(1400, 800);
+// shake = new Shakey();
 }
 
 function draw() {
   background(10);
-  image(hongkong4, 300, 50)
-  image(hongkong1, 30, 300)
-  image(hongkong2, 100, 500)
-  image(hongkong3, 600, 400)
-  image(prochina1, 1000, 100)
-  image(prochina2, 800, 50)
-  image(prochina3, 1300, 500)
-  image(prochina11, 950, 250)
+  imageMode(CENTER);
+  image(hongkong4, 300, 100);
+  image(hongkong1, 30, 400);
+  image(hongkong2, 100, 500);
+  image(hongkong3, 600, 400);
+  image(prochina1, 1000, 100);
+  image(prochina2, 800, 50);
+  image(prochina11, 950, 250);
+  image(prochina3, 1300, 500);
   for (let i = 0; i < 5; i++) {
     // change last two parameters to change speed
     let p = new Particle(mouseX, mouseY, map(mouseX - pmouseX, 0, 10, -.5, .5), map(mouseY - pmouseY, 0, 10, .5, 1));
@@ -83,20 +84,20 @@ class Particle {
   }
 
 }
-class Shakey {
-  constructor() {
-    this.x = random(200);
-    this.y = random(200);
-    this.diameter = random(10, 30);
-    this.speed = 1;
-  }
-
-  move() {
-    this.x += random(-this.speed, this.speed);
-    this.y += random(-this.speed, this.speed);
-  }
-
-  show() {
-    ellipse(this.x, this.y, this.diameter, this.diameter);
-  }
-}
+// class Shakey {
+//   constructor() {
+//     this.x = random(200);
+//     this.y = random(200);
+//     this.diameter = random(10, 30);
+//     this.speed = 1;
+//   }
+//
+//   move() {
+//     this.x += random(-this.speed, this.speed);
+//     this.y += random(-this.speed, this.speed);
+//   }
+//
+//   show() {
+//     ellipse(this.x, this.y, this.diameter, this.diameter);
+//   }
+// }
