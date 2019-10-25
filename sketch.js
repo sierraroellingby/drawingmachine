@@ -5,36 +5,53 @@
 // }
 let hongkong;
 // let shake;
+let hk1;
+let hk1alert=false;
+let hk2;
+let hk2alert=false;
+let hk3;
+let hk3alert=false;
+let hk4;
+let hk4alert=false;
+
 
 function preload(){
 
-  hongkong4 = loadImage('hongkongcrop4.png')
-  hongkong1 = loadImage('hongkongcrop1.png')
-  hongkong2 = loadImage('hongkongcrop2.png')
-  hongkong3 = loadImage('hongkongcrop3.png')
-  prochina1 = loadImage('prochina1.png')
-  prochina2 = loadImage('prochina2.png')
-  prochina3 = loadImage('prochina3.png')
-  prochina11 = loadImage('prochina11.png')
+  // hongkong4 = loadImage('hongkongcrop4.png')
+  // hongkong1 = loadImage('hongkongcrop1.png')
+  // hongkong2 = loadImage('hongkongcrop2.png')
+  // hongkong3 = loadImage('hongkongcrop3.png')
+  // prochina1 = loadImage('prochina1.png')
+  // prochina2 = loadImage('prochina2.png')
+  // prochina3 = loadImage('prochina3.png')
+  // prochina11 = loadImage('prochina11.png')
 }
 const particles = [];
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
-// shake = new Shakey();
+hk1=select("#hk1");
+hk1.mouseOver(alert1);
+hk2=select("#hk2");
+hk2.mouseOver(alert2);
+hk3=select("#hk3");
+hk3.mouseOver(alert3);
+hk4=select("#hk4");
+hk4.mouseOver(alert4);
 }
 
 function draw() {
-  background(10);
-  imageMode(CENTER);
-  image(hongkong4, 300, 100);
-  image(hongkong1, 30, 400);
-  image(hongkong2, 100, 500);
-  image(hongkong3, 600, 400);
-  image(prochina1, 1000, 100);
-  image(prochina2, 800, 50);
-  image(prochina11, 950, 250);
-  image(prochina3, 1300, 500);
+  clear();
+//  background(10);
+  // imageMode(CENTER);
+  // image(hongkong4, 300, 100);
+  // image(hongkong1, 30, 400);
+  // image(hongkong2, 100, 500);
+  // image(hongkong3, 600, 400);
+  // image(prochina1, 950, 200);
+  // image(prochina2, 750, 700);
+  // image(prochina11, 950, 250);
+  // image(prochina3, 1300, 500);
   for (let i = 0; i < 5; i++) {
     // change last two parameters to change speed
     let p = new Particle(mouseX, mouseY, map(mouseX - pmouseX, 0, 10, -.5, .5), map(mouseY - pmouseY, 0, 10, .5, 1));
@@ -48,10 +65,35 @@ function draw() {
       particles.splice(i, 1);
     }
   }
+//color changing particles
+// if (mouseX > 0 && mouseX < 500){
+// // fill(0, 191, 255, this.alpha);
+// // ellipse();
+//
+//
+// }
+
 }
 //insert umbrella images
 
  //drawloop end
+ function alert1(){
+   if (hk1alert==false){
+     alert("you just teargassed a protester!")
+   hk1alert = true;
+   }
+
+ }
+
+ function alert2(){
+   alert("you just teargassed a protester!")
+ }
+ function alert3(){
+   alert("you just teargassed a protester!")
+ }
+ function alert4(){
+   alert("you just teargassed a protester!")
+ }
 
 class Particle {
 
@@ -84,20 +126,3 @@ class Particle {
   }
 
 }
-// class Shakey {
-//   constructor() {
-//     this.x = random(200);
-//     this.y = random(200);
-//     this.diameter = random(10, 30);
-//     this.speed = 1;
-//   }
-//
-//   move() {
-//     this.x += random(-this.speed, this.speed);
-//     this.y += random(-this.speed, this.speed);
-//   }
-//
-//   show() {
-//     ellipse(this.x, this.y, this.diameter, this.diameter);
-//   }
-// }
