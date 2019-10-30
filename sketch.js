@@ -17,7 +17,7 @@ let hk4alert=false;
 
 function preload(){
 
-  // hongkong4 = loadImage('hongkongcrop4.png')
+   hongkong4 = loadImage('hongkongcrop4.png')
   // hongkong1 = loadImage('hongkongcrop1.png')
   // hongkong2 = loadImage('hongkongcrop2.png')
   // hongkong3 = loadImage('hongkongcrop3.png')
@@ -86,13 +86,22 @@ function draw() {
  }
 
  function alert2(){
+   if (hk2alert=false){
    alert("you just teargassed a protester!")
+   hk2alert = true;
+ }
  }
  function alert3(){
+      if (hk3alert=false){
    alert("you just teargassed a protester!")
+   hk3alert = true;
+ }
  }
  function alert4(){
+      if (hk4alert=false){
    alert("you just teargassed a protester!")
+   hk4alert = true;
+ }
  }
 
 class Particle {
@@ -119,10 +128,22 @@ class Particle {
   show() {
     noStroke();
     //stroke(255);
-    fill(60, 170, 0, this.alpha);
+
+    if (mouseX >100){
+      image(hongkong4, this.x, this.y, 20, 20)
+      // fill(60, 170, 0, this.alpha);
+      // ellipse(this.x, this.y, 36);
+      // fill(152, 251, 0, this.alpha);
+      // ellipse(this.x - 30, this.y - 15, 15);
+    }
+    else{
+      fill(20, 100, 255, this.alpha);
     ellipse(this.x, this.y, 36);
     fill(152, 251, 0, this.alpha);
     ellipse(this.x - 30, this.y - 15, 15);
+  }
+
+
   }
 
 }
