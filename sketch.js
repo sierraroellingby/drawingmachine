@@ -126,7 +126,7 @@ class Particle {
     noStroke();
     //stroke(255);
 
-    if (mouseX >100 && mouseX < 1000){
+    if (mouseX >1 && mouseX < 1000){
       image(hkflower, this.x, this.y, 20, 20)
       // fill(60, 170, 0, this.alpha);
       // ellipse(this.x, this.y, 36);
@@ -134,7 +134,7 @@ class Particle {
       // ellipse(this.x - 30, this.y - 15, 15);
     }
     else{
-      fill(20, 100, 255, this.alpha);
+      fill(152, 251, 10, this.alpha);
     ellipse(this.x, this.y, 36);
     fill(152, 251, 0, this.alpha);
     ellipse(this.x - 30, this.y - 15, 15);
