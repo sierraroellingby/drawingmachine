@@ -1,10 +1,6 @@
-// let img;
-//
-// function preload() {
-//   img = loadImage('umbrella-clipart-transparent-18_78.jpg');
-// }
+
 let hongkong;
-// let shake;
+
 let hk1;
 let hk1alert=false;
 let hk2;
@@ -18,6 +14,7 @@ let hk4alert=false;
 function preload(){
 
    hongkong4 = loadImage('hongkongcrop4.png')
+   hkflower = loadImage('hongkongtransparentflower.png')
   // hongkong1 = loadImage('hongkongcrop1.png')
   // hongkong2 = loadImage('hongkongcrop2.png')
   // hongkong3 = loadImage('hongkongcrop3.png')
@@ -129,8 +126,8 @@ class Particle {
     noStroke();
     //stroke(255);
 
-    if (mouseX >100){
-      image(hongkong4, this.x, this.y, 20, 20)
+    if (mouseX >100 && mouseX < 1000){
+      image(hkflower, this.x, this.y, 20, 20)
       // fill(60, 170, 0, this.alpha);
       // ellipse(this.x, this.y, 36);
       // fill(152, 251, 0, this.alpha);
